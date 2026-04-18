@@ -21,7 +21,7 @@ const planos = [
       "Google Calendar",
     ],
     cta: "Começar grátis",
-    ctaUrl: "https://buy.stripe.com/bJe28radzbco74CdkD24000",
+    ctaUrl: "https://app.usepem.com.br/checkout?plano=solo",
   },
   {
     id: "clinica",
@@ -41,7 +41,7 @@ const planos = [
       "10 GB de armazenamento",
     ],
     cta: "Começar grátis",
-    ctaUrl: "https://buy.stripe.com/3cI5kD0CZ80c60ydkD24001",
+    ctaUrl: "https://app.usepem.com.br/checkout?plano=clinica",
   },
   {
     id: "rede",

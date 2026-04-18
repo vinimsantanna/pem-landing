@@ -21,7 +21,7 @@ const planos = [
       "Google Calendar",
     ],
     cta: "Começar grátis",
-    ctaUrl: "https://app.usepem.com.br/checkout?plano=solo",
+    ctaUrl: "https://app.usepem.com.br/cadastro?plano=solo",
   },
   {
     id: "clinica",
@@ -41,7 +41,7 @@ const planos = [
       "10 GB de armazenamento",
     ],
     cta: "Começar grátis",
-    ctaUrl: "https://app.usepem.com.br/checkout?plano=clinica",
+    ctaUrl: "https://app.usepem.com.br/cadastro?plano=clinica",
   },
   {
     id: "rede",
@@ -58,8 +58,8 @@ const planos = [
       "Onboarding assistido",
       "50 GB de armazenamento",
     ],
-    cta: "Falar com especialista",
-    ctaUrl: "https://wa.me/5573988548309",
+    cta: "Começar grátis",
+    ctaUrl: "https://app.usepem.com.br/cadastro?plano=rede",
   },
 ]
 

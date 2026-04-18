@@ -28,21 +28,14 @@ export function Hero() {
 
           {/* Left */}
           <div>
-            <motion.div
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="mb-6 md:mb-8"
+              className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.25em] mb-6 md:mb-8"
             >
-              <Image
-                src="/images/logo-pem-icon.webp"
-                alt="PEM — Protocolo de Escala Médica"
-                width={192}
-                height={128}
-                style={{ height: 58, width: "auto" }}
-                priority
-              />
-            </motion.div>
+              PEM · Software médico · Versão 2026
+            </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}

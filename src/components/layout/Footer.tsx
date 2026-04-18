@@ -15,9 +15,9 @@ export function Footer() {
           © {new Date().getFullYear()} Protocolo de Escala Médica. Todos os direitos reservados.
         </p>
         <div className="flex gap-6 text-sm text-white/30">
-          <a href="#" className="hover:text-white/60 transition-colors">Privacidade</a>
-          <a href="#" className="hover:text-white/60 transition-colors">Termos</a>
-          <a href="#" className="hover:text-white/60 transition-colors">Contato</a>
+          <a href="/privacidade" className="hover:text-white/60 transition-colors">Privacidade</a>
+          <a href="/termos" className="hover:text-white/60 transition-colors">Termos</a>
+          <a href="mailto:contato@usepem.com.br" className="hover:text-white/60 transition-colors">Contato</a>
         </div>
       </div>
     </footer>

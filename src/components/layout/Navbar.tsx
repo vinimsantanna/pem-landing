@@ -44,7 +44,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-5">
           <a
-            href="https://app.usepem.com.br"
+            href="https://app.usepem.com.br/login"
             className="text-[#0B1F3A]/50 hover:text-[#0B1F3A] text-sm transition-colors hidden md:block"
           >
             Entrar

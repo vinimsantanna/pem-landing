@@ -290,7 +290,7 @@ export function Funcionalidades() {
   return (
     <section id="funcionalidades">
       {/* Header */}
-      <div className="bg-white border-b border-slate-100 py-20">
+      <div className="bg-white border-b border-slate-100 py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -315,13 +315,13 @@ export function Funcionalidades() {
       {/* Feature blocks */}
       {features.map((f, i) => (
         <div key={f.tag} className={f.bg}>
-          <div className="max-w-6xl mx-auto px-6 py-24">
+          <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
             <motion.div
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}
+              className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}
             >
               <div>
                 <span className="text-[10px] font-semibold uppercase tracking-[0.12em] px-3 py-1 rounded-full mb-5 inline-block" style={{ background: "#EEF3F9", color: "#1a3a5c" }}>
@@ -343,7 +343,7 @@ export function Funcionalidades() {
                   ))}
                 </div>
               </div>
-              <div>{f.mockup}</div>
+              <div className="overflow-x-auto">{f.mockup}</div>
             </motion.div>
           </div>
         </div>

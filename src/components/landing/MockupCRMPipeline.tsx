@@ -28,7 +28,7 @@ function OriginBadge({ origin }: { origin: string }) {
 export function MockupCRMPipeline() {
   return (
     <div
-      className="rounded-xl overflow-hidden border border-slate-200"
+      className="rounded-xl overflow-hidden border border-slate-200 min-w-[560px]"
       style={{ boxShadow: "0 20px 60px rgba(11,31,58,0.15)" }}
     >
       {/* Window chrome */}

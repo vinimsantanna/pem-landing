@@ -51,13 +51,13 @@ const numeros = [
 
 export function Numeros() {
   return (
-    <section className="py-28 bg-white">
+    <section className="py-16 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-12 md:mb-20"
         >
           <p className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.2em] mb-5">
             Dados reais
@@ -75,7 +75,7 @@ export function Numeros() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="py-10 lg:px-8 first:pl-0 last:pr-0"
+              className="py-6 lg:py-10 lg:px-8 first:pl-0 last:pr-0"
             >
               <p className="text-[4.5rem] font-bold text-[#1a3a5c] leading-none tracking-tight tabular-nums mb-3">
                 {n.valor}

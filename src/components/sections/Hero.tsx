@@ -3,6 +3,12 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Clock, CheckCircle, MessageCircle } from "lucide-react"
 
+const floatingCards = [
+  { icon: Clock, value: "−2h", label: "por dia no agendamento" },
+  { icon: CheckCircle, value: "94%", label: "taxa de confirmação" },
+  { icon: MessageCircle, value: "3×", label: "conversão de leads" },
+]
+
 export function Hero() {
   return (
     <section className="min-h-screen flex flex-col pt-16 relative overflow-hidden" style={{ background: "#F8FAFC" }}>
@@ -17,7 +23,7 @@ export function Hero() {
       />
 
       <div className="flex-1 flex items-center relative z-10">
-        <div className="max-w-7xl mx-auto px-6 w-full py-20 grid lg:grid-cols-[52%_48%] gap-14 items-center">
+        <div className="max-w-7xl mx-auto px-6 w-full py-12 lg:py-20 grid lg:grid-cols-[52%_48%] gap-12 lg:gap-14 items-center">
 
           {/* Left */}
           <div>
@@ -25,7 +31,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.25em] mb-8"
+              className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.25em] mb-6 md:mb-8"
             >
               PEM · Software médico · Versão 2026
             </motion.p>
@@ -34,7 +40,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[#0B1F3A] leading-[1.05] tracking-tight mb-7"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[#0B1F3A] leading-[1.05] tracking-tight mb-6 md:mb-7"
             >
               Médico de alto padrão não perde tempo confirmando consulta no WhatsApp.
             </motion.h1>
@@ -43,7 +49,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="text-[#334155] text-lg leading-relaxed max-w-lg mb-10"
+              className="text-[#334155] text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
             >
               Da primeira mensagem no Instagram, Facebook ou WhatsApp até a receita assinada do celular — um sistema só. Agenda, prontuário, receituário, financeiro e CRM clínico operando em conjunto, sem planilha, sem gambiarra.
             </motion.p>
@@ -52,11 +58,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.35 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6"
             >
               <a
                 href="https://app.usepem.com.br/cadastro"
-                className="group inline-flex items-center gap-3 bg-[#1DAB87] hover:bg-[#158a6d] text-white font-semibold px-8 py-4 rounded-xl transition-all text-base"
+                className="group inline-flex items-center justify-center gap-3 bg-[#1DAB87] hover:bg-[#158a6d] text-white font-semibold px-7 py-4 rounded-xl transition-all text-base"
                 style={{ boxShadow: "0 4px 12px rgba(29,171,135,0.25)" }}
               >
                 Começar grátis por 14 dias
@@ -64,7 +70,7 @@ export function Hero() {
               </a>
               <a
                 href="https://wa.me/5573988548309"
-                className="inline-flex items-center gap-2 border border-[#0B1F3A]/20 hover:bg-[#0B1F3A] hover:text-white text-[#0B1F3A] font-medium px-6 py-4 rounded-xl transition-all text-base"
+                className="inline-flex items-center justify-center gap-2 border border-[#0B1F3A]/20 hover:bg-[#0B1F3A] hover:text-white text-[#0B1F3A] font-medium px-6 py-4 rounded-xl transition-all text-base"
               >
                 Ver demonstração (2 min)
               </a>
@@ -74,13 +80,35 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="text-[#0B1F3A]/35 text-sm"
+              className="text-[#0B1F3A]/35 text-sm mb-8 lg:mb-0"
             >
               Sem cartão de crédito · Sem fidelidade · Ativação em 48h
             </motion.p>
+
+            {/* Mobile metric cards — substituto dos floating cards no desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="grid grid-cols-3 gap-3 mt-6 lg:hidden"
+            >
+              {floatingCards.map(({ icon: Icon, value, label }) => (
+                <div
+                  key={value}
+                  className="rounded-xl px-3 py-3 flex flex-col items-center text-center bg-white border border-slate-100"
+                  style={{ boxShadow: "0 2px 8px rgba(11,31,58,0.08)" }}
+                >
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-2" style={{ background: "#E8F8F4" }}>
+                    <Icon className="w-4 h-4 text-[#1DAB87]" />
+                  </div>
+                  <p className="text-[#0B1F3A] text-base font-bold leading-none mb-1">{value}</p>
+                  <p className="text-slate-400 text-[10px] leading-tight">{label}</p>
+                </div>
+              ))}
+            </motion.div>
           </div>
 
-          {/* Right — Dashboard mockup */}
+          {/* Right — Dashboard mockup (desktop only) */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
@@ -107,7 +135,6 @@ export function Hero() {
 
               {/* Dashboard UI */}
               <div className="bg-white">
-                {/* Header */}
                 <div className="flex items-center justify-between border-b border-slate-100 px-4 py-2.5">
                   <span className="text-xs font-semibold text-[#0B1F3A]">Dashboard</span>
                   <div className="flex items-center gap-2">
@@ -118,7 +145,6 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* KPIs */}
                 <div className="grid grid-cols-4 gap-0 border-b border-slate-100">
                   {[
                     { l: "Faturamento", v: "R$ 8.400", sub: "+12% esta semana", c: "text-green-600" },
@@ -134,7 +160,6 @@ export function Hero() {
                   ))}
                 </div>
 
-                {/* Next appointments */}
                 <div className="px-4 py-2.5">
                   <p className="text-[9px] font-semibold text-slate-500 uppercase tracking-wide mb-2">Próximas consultas</p>
                   <div className="space-y-1.5">
@@ -159,7 +184,6 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* WhatsApp notification */}
                 <motion.div
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -175,89 +199,48 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating glass cards */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2 }}
-              className="absolute -bottom-6 -left-10 rounded-xl px-5 py-3.5"
-              style={{
-                background: "rgba(255, 255, 255, 0.72)",
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                border: "1px solid rgba(255, 255, 255, 0.6)",
-                boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
-              }}
-            >
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
-                  <Clock className="w-4 h-4 text-[#1DAB87]" />
+            {/* Floating glass cards — desktop only */}
+            {[
+              { icon: Clock, value: "−2h", label: "por dia no agendamento", pos: "absolute -bottom-6 -left-10", delay: 1.2 },
+              { icon: CheckCircle, value: "94%", label: "taxa de confirmação", pos: "absolute -top-6 -right-8", delay: 1.4 },
+              { icon: MessageCircle, value: "Leads do Insta", label: "em consulta", pos: "absolute top-1/3 -right-12", delay: 1.6 },
+            ].map(({ icon: Icon, value, label, pos, delay }) => (
+              <motion.div
+                key={value}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay }}
+                className={`${pos} rounded-xl px-5 py-3.5`}
+                style={{
+                  background: "rgba(255, 255, 255, 0.72)",
+                  backdropFilter: "blur(20px) saturate(180%)",
+                  WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                  border: "1px solid rgba(255, 255, 255, 0.6)",
+                  boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
+                }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
+                    <Icon className="w-4 h-4 text-[#1DAB87]" />
+                  </div>
+                  <div>
+                    <p className="text-[#0B1F3A] text-base font-bold leading-none">{value}</p>
+                    <p className="text-slate-500 text-xs mt-0.5">{label}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-[#0B1F3A] text-lg font-bold leading-none">−2h</p>
-                  <p className="text-slate-500 text-xs mt-0.5">por dia no agendamento</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.4 }}
-              className="absolute -top-6 -right-8 rounded-xl px-5 py-3.5"
-              style={{
-                background: "rgba(255, 255, 255, 0.72)",
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                border: "1px solid rgba(255, 255, 255, 0.6)",
-                boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
-              }}
-            >
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
-                  <CheckCircle className="w-4 h-4 text-[#1DAB87]" />
-                </div>
-                <div>
-                  <p className="text-[#0B1F3A] text-lg font-bold leading-none">94%</p>
-                  <p className="text-slate-500 text-xs mt-0.5">taxa de confirmação</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.6 }}
-              className="absolute top-1/3 -right-12 rounded-xl px-5 py-3.5"
-              style={{
-                background: "rgba(255, 255, 255, 0.72)",
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                border: "1px solid rgba(255, 255, 255, 0.6)",
-                boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
-              }}
-            >
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
-                  <MessageCircle className="w-4 h-4 text-[#1DAB87]" />
-                </div>
-                <div>
-                  <p className="text-[#0B1F3A] text-sm font-bold leading-tight">Leads do Insta</p>
-                  <p className="text-slate-500 text-xs mt-0.5">em consulta</p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
 
       {/* Trust strip */}
       <div className="border-t border-[#0B1F3A]/06 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#0B1F3A]/30 text-xs uppercase tracking-widest font-medium">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4">
+          <p className="text-[#0B1F3A]/30 text-xs uppercase tracking-widest font-medium shrink-0">
             Construído com médicos de 12 especialidades
           </p>
-          <div className="flex flex-wrap items-center gap-6 sm:gap-10">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-6">
             {[
               "Assinatura digital ICP-Brasil A1",
               "Dados no Brasil · LGPD-compliant",

@@ -116,13 +116,12 @@ export function Planos() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className={`relative rounded-2xl p-7 flex flex-col transition-shadow ${
                 plano.highlight
-                  ? "border-2 border-[#1a3a5c]"
+                  ? "border-2 border-[#1a3a5c] md:scale-[1.03]"
                   : "border border-slate-200"
               }`}
               style={{
                 background: plano.highlight ? "#0B1F3A" : "#ffffff",
                 boxShadow: plano.highlight ? "0 8px 32px rgba(11,31,58,0.2)" : "0 2px 8px rgba(11,31,58,0.06)",
-                transform: plano.highlight ? "scale(1.03)" : "scale(1)",
               }}
             >
               {plano.highlight && (

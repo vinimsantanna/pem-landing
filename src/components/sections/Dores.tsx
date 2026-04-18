@@ -43,7 +43,7 @@ const problemas = [
 export function Dores() {
   return (
     <section
-      className="py-28 relative overflow-hidden"
+      className="py-16 md:py-28 relative overflow-hidden"
       style={{ background: "#0B1F3A" }}
     >
       {/* Subtle grid pattern */}
@@ -61,7 +61,7 @@ export function Dores() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-20"
+          className="mb-12 md:mb-20"
         >
           <p className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.2em] mb-5">
             O custo invisível

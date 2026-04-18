@@ -1,21 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-
-const appointments = [
-  { time: "08:30", name: "Maria Fernanda S.", type: "Consulta inicial", status: "confirmed" },
-  { time: "09:15", name: "João Augusto P.", type: "Retorno", status: "confirmed" },
-  { time: "10:00", name: "Ana Paula Lima", type: "Procedimento", status: "pending" },
-  { time: "11:00", name: "Carlos Menezes", type: "Avaliação", status: "confirmed" },
-  { time: "14:30", name: "Beatriz Oliveira", type: "Pós-operatório", status: "confirmed" },
-]
+import { ArrowRight, Clock, CheckCircle, MessageCircle } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="min-h-screen bg-[#070f1e] flex flex-col pt-16">
-      <div className="flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full py-20 grid lg:grid-cols-[55%_45%] gap-12 items-center">
+    <section className="min-h-screen flex flex-col pt-16 relative overflow-hidden" style={{ background: "#F8FAFC" }}>
+      {/* Gradient mesh blobs */}
+      <div
+        className="absolute top-[-80px] right-[-60px] w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: "#A8C8E8", filter: "blur(120px)", opacity: 0.4 }}
+      />
+      <div
+        className="absolute bottom-[-40px] left-[-80px] w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: "#1DAB87", filter: "blur(120px)", opacity: 0.12 }}
+      />
+
+      <div className="flex-1 flex items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 w-full py-20 grid lg:grid-cols-[52%_48%] gap-14 items-center">
 
           {/* Left */}
           <div>
@@ -23,52 +25,62 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.25em] mb-10"
+              className="text-[#1DAB87] text-xs font-mono uppercase tracking-[0.25em] mb-8"
             >
-              Software médico · Versão 2025
+              PEM · Software médico · Versão 2026
             </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-[4.5rem] lg:text-[5rem] font-bold text-white leading-[1.05] tracking-tight mb-8"
+              className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[#0B1F3A] leading-[1.05] tracking-tight mb-7"
             >
-              O software que
-              <br />
-              médicos de{" "}
-              <span className="text-[#1DAB87]">alto padrão</span>
-              <br />
-              escolheram para crescer.
+              Médico de alto padrão não perde tempo confirmando consulta no WhatsApp.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="text-white/45 text-lg leading-relaxed max-w-md mb-12"
+              className="text-[#334155] text-lg leading-relaxed max-w-lg mb-10"
             >
-              Confirmação automática, prontuário eletrônico e receituário digital — para médicos que respeitam o próprio tempo.
+              Da primeira mensagem no Instagram até a receita assinada do celular — um sistema só. Agenda, prontuário, receituário, financeiro e CRM clínico operando em conjunto, sem planilha, sem gambiarra.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.35 }}
-              className="flex items-center gap-6"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6"
             >
               <a
                 href="https://app.usepem.com.br/cadastro"
                 className="group inline-flex items-center gap-3 bg-[#1DAB87] hover:bg-[#158a6d] text-white font-semibold px-8 py-4 rounded-xl transition-all text-base"
+                style={{ boxShadow: "0 4px 12px rgba(29,171,135,0.25)" }}
               >
-                Começar grátis
+                Começar grátis por 14 dias
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
-              <span className="text-white/20 text-sm">14 dias · sem cartão</span>
+              <a
+                href="https://wa.me/5573988548309"
+                className="inline-flex items-center gap-2 border border-[#0B1F3A]/20 hover:bg-[#0B1F3A] hover:text-white text-[#0B1F3A] font-medium px-6 py-4 rounded-xl transition-all text-base"
+              >
+                Ver demonstração (2 min)
+              </a>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              className="text-[#0B1F3A]/35 text-sm"
+            >
+              Sem cartão de crédito · Sem fidelidade · Ativação em 48h
+            </motion.p>
           </div>
 
-          {/* Right — Product UI (fiel ao PEM real) */}
+          {/* Right — Dashboard mockup */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
@@ -76,8 +88,8 @@ export function Hero() {
             className="hidden lg:block relative"
           >
             <div
-              className="rounded-xl overflow-hidden border border-white/10"
-              style={{ boxShadow: "0 48px 96px rgba(0,0,0,0.6)" }}
+              className="rounded-xl overflow-hidden border border-slate-200"
+              style={{ boxShadow: "0 24px 64px rgba(11,31,58,0.18)" }}
             >
               {/* Window chrome */}
               <div className="bg-slate-100 px-4 py-2.5 flex items-center gap-2 border-b border-slate-200">
@@ -88,115 +100,172 @@ export function Hero() {
                 </div>
                 <div className="flex-1 mx-3">
                   <div className="bg-white border border-slate-200 rounded-md py-0.5 px-3 max-w-[200px] mx-auto">
-                    <span className="text-slate-400 text-[10px] font-mono">app.usepem.com.br/agenda</span>
+                    <span className="text-slate-400 text-[10px] font-mono">app.usepem.com.br/dashboard</span>
                   </div>
                 </div>
               </div>
 
-              {/* Real PEM Agenda UI */}
+              {/* Dashboard UI */}
               <div className="bg-white">
-                {/* Page header */}
-                <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-semibold text-slate-800">Agenda</span>
-                    <span className="text-green-600 text-xs font-medium bg-green-50 px-2 py-0.5 rounded-full">8 confirmados hoje</span>
+                {/* Header */}
+                <div className="flex items-center justify-between border-b border-slate-100 px-4 py-2.5">
+                  <span className="text-xs font-semibold text-[#0B1F3A]">Dashboard</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-slate-400">Hoje, Sex 18 Abr</span>
+                    <div className="w-6 h-6 rounded-full bg-[#0B1F3A] flex items-center justify-center">
+                      <span className="text-white text-[8px] font-bold">CS</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-50 p-0.5">
-                    {["Dia", "Semana", "Mês"].map((v, i) => (
-                      <span key={v} className={`rounded-md px-2.5 py-0.5 text-xs font-medium ${i === 0 ? "bg-white text-slate-800 shadow-sm" : "text-slate-500"}`}>{v}</span>
+                </div>
+
+                {/* KPIs */}
+                <div className="grid grid-cols-4 gap-0 border-b border-slate-100">
+                  {[
+                    { l: "Faturamento", v: "R$ 8.400", sub: "+12% esta semana", c: "text-green-600" },
+                    { l: "Confirmadas hoje", v: "11/12", sub: "1 pendente", c: "text-[#0B1F3A]" },
+                    { l: "Leads novos", v: "7", sub: "3 quentes", c: "text-amber-600" },
+                    { l: "Margem", v: "67%", sub: "+2% vs. mês ant.", c: "text-[#1DAB87]" },
+                  ].map((k, i) => (
+                    <div key={i} className={`px-3 py-2.5 ${i < 3 ? "border-r border-slate-100" : ""}`}>
+                      <p className="text-[8px] text-slate-400 mb-0.5">{k.l}</p>
+                      <p className={`text-sm font-bold ${k.c}`}>{k.v}</p>
+                      <p className="text-[8px] text-slate-400">{k.sub}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Next appointments */}
+                <div className="px-4 py-2.5">
+                  <p className="text-[9px] font-semibold text-slate-500 uppercase tracking-wide mb-2">Próximas consultas</p>
+                  <div className="space-y-1.5">
+                    {[
+                      { h: "14:30", n: "Maria Fernanda S.", t: "Consulta inicial", s: "confirmado" },
+                      { h: "15:15", n: "João Augusto P.", t: "Retorno", s: "confirmado" },
+                      { h: "16:00", n: "Ana Paula Lima", t: "Procedimento", s: "pendente" },
+                    ].map((a, i) => (
+                      <div key={i} className="flex items-center gap-2.5">
+                        <span className="text-[9px] text-slate-400 w-8 shrink-0">{a.h}</span>
+                        <div className={`flex-1 rounded-lg px-2.5 py-1.5 flex items-center justify-between ${a.s === "confirmado" ? "bg-green-50 border border-green-100" : "bg-amber-50 border border-amber-100"}`}>
+                          <div>
+                            <p className="text-[9px] font-medium text-slate-800">{a.n}</p>
+                            <p className="text-[8px] text-slate-500">{a.t}</p>
+                          </div>
+                          <span className={`text-[8px] font-semibold px-1.5 py-0.5 rounded-full ${a.s === "confirmado" ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"}`}>
+                            {a.s}
+                          </span>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Calendar table */}
-                <table className="w-full text-xs border-collapse">
-                  <thead>
-                    <tr className="bg-slate-50 border-b border-slate-200">
-                      <th className="w-12 py-2 text-slate-400 font-normal" />
-                      <th className="py-2 px-3 text-left font-medium text-slate-600">Dr. Carlos Silva</th>
-                      <th className="py-2 px-3 text-left font-medium text-slate-600">Dra. Ana Faria</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      { h: "08:30", c1: { n: "Maria Fernanda S.", p: "Consulta inicial", s: "confirmado" }, c2: null },
-                      { h: "09:00", c1: null, c2: { n: "João Augusto P.", p: "Retorno", s: "agendado" } },
-                      { h: "10:00", c1: { n: "Patrícia Lima", p: "Pós-operatório", s: "confirmado" }, c2: { n: "Carlos Menezes", p: "Avaliação", s: "confirmado" } },
-                      { h: "11:00", c1: null, c2: null },
-                    ].map((row) => (
-                      <tr key={row.h} className="border-b border-slate-100">
-                        <td className="py-2 pr-2 text-right text-slate-400 text-[10px] w-12 pl-2">{row.h}</td>
-                        {[row.c1, row.c2].map((cell, ci) => (
-                          <td key={ci} className="px-2 py-1">
-                            {cell ? (
-                              <div className={`rounded-md p-2 ${cell.s === "confirmado" ? "bg-green-50 border border-green-100" : "bg-blue-50 border border-blue-100"}`}>
-                                <span className={`inline-flex px-1.5 py-0.5 rounded-full text-[9px] font-medium mb-1 ${cell.s === "confirmado" ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"}`}>{cell.s}</span>
-                                <div className="font-medium text-slate-800 truncate">{cell.n}</div>
-                                <div className="text-slate-500 truncate">{cell.p}</div>
-                              </div>
-                            ) : (
-                              <div className="h-10 rounded-md border border-dashed border-slate-200" />
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-
-                {/* WhatsApp notification bar */}
+                {/* WhatsApp notification */}
                 <motion.div
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.1 }}
-                  className="mx-3 mb-3 mt-2 flex items-center gap-2.5 bg-green-50 border border-green-100 rounded-lg px-3 py-2.5"
+                  className="mx-3 mb-3 flex items-center gap-2 bg-green-50 border border-green-100 rounded-lg px-3 py-2"
                 >
-                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center shrink-0">
-                    <span className="text-white text-[9px] font-bold">✓</span>
+                  <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+                    <span className="text-white text-[8px]">✓</span>
                   </div>
-                  <p className="text-green-700 text-xs font-medium">4 lembretes enviados via WhatsApp automaticamente</p>
-                  <span className="text-green-500 text-[10px] ml-auto">agora</span>
+                  <p className="text-green-700 text-[10px] font-medium">3 lembretes enviados via WhatsApp automaticamente</p>
+                  <span className="text-green-500 text-[9px] ml-auto shrink-0">agora</span>
                 </motion.div>
               </div>
             </div>
 
-            {/* Floating cards */}
+            {/* Floating glass cards */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2 }}
-              className="absolute -bottom-5 -left-8 bg-white rounded-2xl px-5 py-4 shadow-2xl border border-slate-100"
+              className="absolute -bottom-6 -left-10 rounded-xl px-5 py-3.5"
+              style={{
+                background: "rgba(255, 255, 255, 0.72)",
+                backdropFilter: "blur(20px) saturate(180%)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                border: "1px solid rgba(255, 255, 255, 0.6)",
+                boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
+              }}
             >
-              <p className="text-[#0B1F3A] text-2xl font-bold leading-none">−2h</p>
-              <p className="text-slate-400 text-xs mt-1">por dia no agendamento</p>
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
+                  <Clock className="w-4 h-4 text-[#1DAB87]" />
+                </div>
+                <div>
+                  <p className="text-[#0B1F3A] text-lg font-bold leading-none">−2h</p>
+                  <p className="text-slate-500 text-xs mt-0.5">por dia no agendamento</p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.35 }}
-              className="absolute -top-5 -right-6 bg-[#0d1f38] border border-white/10 rounded-2xl px-5 py-4 shadow-2xl"
+              transition={{ delay: 1.4 }}
+              className="absolute -top-6 -right-8 rounded-xl px-5 py-3.5"
+              style={{
+                background: "rgba(255, 255, 255, 0.72)",
+                backdropFilter: "blur(20px) saturate(180%)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                border: "1px solid rgba(255, 255, 255, 0.6)",
+                boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
+              }}
             >
-              <p className="text-[#1DAB87] text-2xl font-bold leading-none">94%</p>
-              <p className="text-white/35 text-xs mt-1">taxa de confirmação</p>
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
+                  <CheckCircle className="w-4 h-4 text-[#1DAB87]" />
+                </div>
+                <div>
+                  <p className="text-[#0B1F3A] text-lg font-bold leading-none">94%</p>
+                  <p className="text-slate-500 text-xs mt-0.5">taxa de confirmação</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.6 }}
+              className="absolute top-1/3 -right-12 rounded-xl px-5 py-3.5"
+              style={{
+                background: "rgba(255, 255, 255, 0.72)",
+                backdropFilter: "blur(20px) saturate(180%)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                border: "1px solid rgba(255, 255, 255, 0.6)",
+                boxShadow: "0 8px 32px rgba(11,31,58,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
+              }}
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "#E8F8F4" }}>
+                  <MessageCircle className="w-4 h-4 text-[#1DAB87]" />
+                </div>
+                <div>
+                  <p className="text-[#0B1F3A] text-sm font-bold leading-tight">Leads do Insta</p>
+                  <p className="text-slate-500 text-xs mt-0.5">em consulta</p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Trust strip */}
-      <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-xs uppercase tracking-widest">Confiado por clínicas em todo o Brasil</p>
-          <div className="flex items-center gap-8 sm:gap-12">
+      <div className="border-t border-[#0B1F3A]/06 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[#0B1F3A]/30 text-xs uppercase tracking-widest font-medium">
+            Construído com médicos de 12 especialidades
+          </p>
+          <div className="flex flex-wrap items-center gap-6 sm:gap-10">
             {[
-              { value: "340+", label: "clínicas ativas" },
-              { value: "2.800+", label: "consultas/semana" },
-              { value: "R$ 4.2M+", label: "gerenciados/mês" },
+              "Assinatura digital ICP-Brasil A1",
+              "Dados no Brasil · LGPD-compliant",
+              "Google Calendar, Instagram, Facebook e WhatsApp",
             ].map((s) => (
-              <div key={s.value} className="text-center">
-                <p className="text-white text-sm font-bold">{s.value}</p>
-                <p className="text-white/25 text-xs">{s.label}</p>
+              <div key={s} className="flex items-center gap-1.5">
+                <span className="text-[#1DAB87] text-xs">✓</span>
+                <p className="text-[#0B1F3A]/45 text-xs">{s}</p>
               </div>
             ))}
           </div>

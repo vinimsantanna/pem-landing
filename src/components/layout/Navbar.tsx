@@ -1,24 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react"
-
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[#070f1e]/98 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 h-16"
+      style={{
+        background: "rgba(255, 255, 255, 0.85)",
+        backdropFilter: "blur(20px) saturate(180%)",
+        WebkitBackdropFilter: "blur(20px) saturate(180%)",
+        borderBottom: "1px solid rgba(11, 31, 58, 0.06)",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" className="text-white font-bold text-xl tracking-tight">
+      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+        <a href="/" className="font-bold text-xl tracking-tight text-[#0B1F3A]">
           PEM<span className="text-[#1DAB87]">.</span>
         </a>
 
@@ -32,7 +26,7 @@ export function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="text-white/40 hover:text-white text-sm transition-colors"
+              className="text-[#0B1F3A]/50 hover:text-[#0B1F3A] text-sm transition-colors"
             >
               {item.label}
             </a>
@@ -42,7 +36,7 @@ export function Navbar() {
         <div className="flex items-center gap-5">
           <a
             href="https://app.usepem.com.br"
-            className="text-white/40 hover:text-white text-sm transition-colors hidden md:block"
+            className="text-[#0B1F3A]/50 hover:text-[#0B1F3A] text-sm transition-colors hidden md:block"
           >
             Entrar
           </a>

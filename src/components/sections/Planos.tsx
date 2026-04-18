@@ -8,7 +8,7 @@ const planos = [
     id: "solo",
     name: "Solo",
     tag: "Autônomos",
-    price: 347,
+    price: 297,
     description: "Para médico autônomo ou consultório individual que quer eliminar o operacional.",
     highlight: false,
     features: [

@@ -20,7 +20,7 @@ export function Navbar() {
             alt="PEM — Protocolo de Escala Médica"
             width={120}
             height={80}
-            className="h-10 w-auto"
+            className="h-14 w-auto"
             priority
           />
         </a>

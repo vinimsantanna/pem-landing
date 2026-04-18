@@ -45,7 +45,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="text-[#334155] text-lg leading-relaxed max-w-lg mb-10"
             >
-              Da primeira mensagem no Instagram até a receita assinada do celular — um sistema só. Agenda, prontuário, receituário, financeiro e CRM clínico operando em conjunto, sem planilha, sem gambiarra.
+              Da primeira mensagem no Instagram, Facebook ou WhatsApp até a receita assinada do celular — um sistema só. Agenda, prontuário, receituário, financeiro e CRM clínico operando em conjunto, sem planilha, sem gambiarra.
             </motion.p>
 
             <motion.div

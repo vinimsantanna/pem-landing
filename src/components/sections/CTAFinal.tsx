@@ -36,7 +36,7 @@ export function CTAFinal() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5573988548309"
               className="inline-flex items-center gap-3 text-white/50 hover:text-white font-medium py-4 transition-colors text-base"
             >
               <MessageCircle className="w-4 h-4" />

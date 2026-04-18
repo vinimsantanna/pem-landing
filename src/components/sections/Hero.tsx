@@ -12,7 +12,7 @@ const floatingCards = [
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col pt-16 relative overflow-hidden" style={{ background: "#F8FAFC" }}>
+    <section className="min-h-screen flex flex-col pt-20 relative overflow-hidden" style={{ background: "#F8FAFC" }}>
       {/* Gradient mesh blobs */}
       <div
         className="absolute top-[-80px] right-[-60px] w-[500px] h-[500px] rounded-full pointer-events-none"

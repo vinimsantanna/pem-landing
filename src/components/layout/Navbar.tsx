@@ -5,7 +5,7 @@ import Image from "next/image"
 export function Navbar() {
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 h-16"
+      className="fixed top-0 left-0 right-0 z-50 h-20"
       style={{
         background: "rgba(255, 255, 255, 0.85)",
         backdropFilter: "blur(20px) saturate(180%)",
@@ -20,7 +20,7 @@ export function Navbar() {
             alt="PEM — Protocolo de Escala Médica"
             width={120}
             height={80}
-            className="h-14 w-auto"
+            className="h-16 w-auto"
             priority
           />
         </a>

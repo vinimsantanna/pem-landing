@@ -42,20 +42,12 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-5">
-          <a
-            href="https://app.usepem.com.br/login"
-            className="text-[#0B1F3A]/50 hover:text-[#0B1F3A] text-sm transition-colors hidden md:block"
-          >
-            Entrar
-          </a>
-          <a
-            href="https://app.usepem.com.br/cadastro"
-            className="bg-[#1DAB87] hover:bg-[#158a6d] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
-          >
-            14 dias grátis
-          </a>
-        </div>
+        <a
+          href="https://app.usepem.com.br/cadastro"
+          className="bg-[#1DAB87] hover:bg-[#158a6d] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+        >
+          14 dias grátis
+        </a>
       </div>
     </header>
   )

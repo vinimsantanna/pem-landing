@@ -17,7 +17,7 @@ export function Footer() {
         <div className="flex gap-6 text-sm text-white/30">
           <a href="/privacidade" className="hover:text-white/60 transition-colors">Privacidade</a>
           <a href="/termos" className="hover:text-white/60 transition-colors">Termos</a>
-          <a href="mailto:contato@usepem.com.br" className="hover:text-white/60 transition-colors">Contato</a>
+          <a href="mailto:suporte@usepem.com.br" className="hover:text-white/60 transition-colors">Contato</a>
         </div>
       </div>
     </footer>

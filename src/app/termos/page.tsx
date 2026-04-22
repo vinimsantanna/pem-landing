@@ -222,7 +222,7 @@ Se qualquer disposição destes Termos for considerada inválida ou inexequível
 
 15.5 Contato
 Protocolo de Escala Médica Ltda.
-E-mail: contato@usepem.com.br
+E-mail: suporte@usepem.com.br
 WhatsApp: +55 73 98854-8309`,
   },
 ]

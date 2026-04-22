@@ -12,7 +12,7 @@ const sections = [
     title: "1. Quem somos",
     content: `O PEM (Protocolo de Escala Médica) é um software de gestão clínica desenvolvido e operado pela Protocolo de Escala Médica Ltda., pessoa jurídica de direito privado, com sede no Brasil. Somos responsáveis pelo tratamento dos seus dados pessoais conforme descrito nesta Política de Privacidade.
 
-Para questões relacionadas a privacidade e proteção de dados, você pode entrar em contato com nosso Encarregado de Dados (DPO) pelo e-mail: privacidade@usepem.com.br.`,
+Para questões relacionadas a privacidade e proteção de dados, você pode entrar em contato com nosso Encarregado de Dados (DPO) pelo e-mail: suporte@usepem.com.br.`,
   },
   {
     title: "2. Âmbito de aplicação",
@@ -164,7 +164,7 @@ Após o encerramento do contrato, você pode solicitar a exportação completa d
 • Oposição: opor-se ao tratamento baseado em interesse legítimo quando não concordar com a justificativa apresentada;
 • Revisão de decisões automatizadas: solicitar revisão de decisões tomadas exclusivamente com base em tratamento automatizado.
 
-Para exercer seus direitos, entre em contato pelo e-mail privacidade@usepem.com.br. Responderemos em até 15 dias úteis.`,
+Para exercer seus direitos, entre em contato pelo e-mail suporte@usepem.com.br. Responderemos em até 15 dias úteis.`,
   },
   {
     title: "12. Cookies e tecnologias de rastreamento",
@@ -197,7 +197,7 @@ Manteremos versões anteriores arquivadas para consulta mediante solicitação.`
     content: `Para exercer seus direitos, esclarecer dúvidas ou apresentar reclamações relacionadas à privacidade e proteção de dados:
 
 Encarregado de Proteção de Dados (DPO)
-E-mail: privacidade@usepem.com.br
+E-mail: suporte@usepem.com.br
 Prazo de resposta: até 15 dias úteis
 
 Você também tem o direito de apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD): www.gov.br/anpd`,
@@ -224,7 +224,7 @@ export default function PoliticaPrivacidadePage() {
 
           <div className="bg-[#E8F8F4] border border-[#1DAB87]/20 rounded-xl px-6 py-4 mb-10">
             <p className="text-[#0d6e56] text-sm leading-relaxed">
-              <strong>Resumo:</strong> O PEM armazena seus dados em servidores no Brasil, não vende seus dados a terceiros, trata dados de saúde com proteção reforçada e você pode solicitar a exclusão ou portabilidade dos seus dados a qualquer momento pelo e-mail <strong>privacidade@usepem.com.br</strong>.
+              <strong>Resumo:</strong> O PEM armazena seus dados em servidores no Brasil, não vende seus dados a terceiros, trata dados de saúde com proteção reforçada e você pode solicitar a exclusão ou portabilidade dos seus dados a qualquer momento pelo e-mail <strong>suporte@usepem.com.br</strong>.
             </p>
           </div>
 
